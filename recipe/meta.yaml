@@ -23,7 +23,7 @@ requirements:
 
 test:
   imports:
-    - eval-type-backport
+    - eval_type_backport
   commands:
     - pip check
   requires:
@@ -33,7 +33,6 @@ about:
   home: https://github.com/alexmojaki/eval_type_backport/
   license: MIT
   license_family: MIT
-  license_file: LICENSE
   summary: Like `typing._eval_type`, but lets older Python versions use newer typing features.
   description:  |
     This is a tiny package providing a replacement for typing._eval_type to support newer typing features in older Python versions.
