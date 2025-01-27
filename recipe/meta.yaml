@@ -17,15 +17,26 @@ requirements:
   host:
     - pip
     - python
+    - wheel
   run:
     - python
+
+test:
+  imports:
+    - eval-type-backport
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/alexmojaki/eval_type_backport/
   license: MIT
   license_family: MIT
-  license_file: 
-  summary: This is a tiny package providing a replacement for typing._eval_type to support newer typing features in older Python versions.
+  license_file: LICENSE
+  summary: Like `typing._eval_type`, but lets older Python versions use newer typing features.
+  description:  |
+    This is a tiny package providing a replacement for typing._eval_type to support newer typing features in older Python versions.
   doc_url: https://github.com/alexmojaki/eval_type_backport/
   dev_url: https://github.com/alexmojaki/eval_type_backport/
 
