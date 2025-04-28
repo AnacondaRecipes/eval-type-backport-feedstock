@@ -1,0 +1,36 @@
+{% set name = "eval-type-backport" %}
+{% set version = "0.2.2" %}
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/eval_type_backport-{{ version }}.tar.gz
+  sha256: f0576b4cf01ebb5bd358d02314d31846af5e07678387486e2c798af0e7d849c1
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+requirements:
+  host:
+    - python >=3.8
+    - setuptools
+    - wheel
+    - setuptools-scm
+    - pip
+  run:
+    - python >=3.8  # 
+test:
+  imports:
+    - eval_type_backport
+  commands:
+    - pip check
+  requires:
+    - pip
+about:
+  home: https://github.com/alexmojaki/eval_type_backport
+  summary: Like `typing._eval_type`, but lets older Python versions use newer typing features.
+  license: MIT
+  license_file: LICENSE.txt
+extra:
+  recipe-maintainers:
+    - Arishamays1
