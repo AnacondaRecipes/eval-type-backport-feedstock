@@ -1,14 +1,14 @@
 {% set name = "eval-type-backport" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 1638210401e184ff17f877e9a2fa076b60b5838790f4532a21761cc2be67aea1
-  skip: true  # [py<38]
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 8397d25e6524c2e67b9576bb0636be27dea2192017711220c534ec2de921e9b0
+  skip: true  # [py<37]
 
 build:
   number: 0
@@ -37,15 +37,15 @@ test:
     - pytest
 
 about:
-  home: https://github.com/alexmojaki/eval_type_backport/
+  home: https://github.com/alexmojaki/eval_type_backport
   license: MIT
   license_file: LICENSE.txt
   license_family: MIT
   summary: Like typing._eval_type, but lets older Python versions use newer typing features.
   description:  |
     This is a tiny package providing a replacement for typing._eval_type to support newer typing features in older Python versions.
-  doc_url: https://github.com/alexmojaki/eval_type_backport/
-  dev_url: https://github.com/alexmojaki/eval_type_backport/
+  doc_url: https://github.com/alexmojaki/eval_type_backport
+  dev_url: https://github.com/alexmojaki/eval_type_backport
 
 extra:
   recipe-maintainers:
